@@ -1,2 +1,2 @@
 # darculator
-Darcula theme basic calculator.
+Darcula themed basic calculator.
