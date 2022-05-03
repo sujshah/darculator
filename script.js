@@ -2,7 +2,7 @@ let DISPLAY_VALUE = "0";
 let CURRENT_NUMBER;
 let OPERATOR_SYMBOL;
 let SET_FLOATING_POINT = false;
-const PRECISION = 1e15;
+const PRECISION = 1e6;
 const OPERATOR_BY_SYMBOL = {
     "+": add,
     "-": subtract,
