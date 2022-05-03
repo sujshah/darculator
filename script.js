@@ -38,9 +38,16 @@ function outputDisplayValue() {
 
 function processMouseClick() {
     document.querySelectorAll('.button').forEach(
-        element => element.addEventListener('click', populateDisplay)
+        element => {
+            element.addEventListener('click', populateDisplayFromClick);
+        }
     );
     document.querySelector('.clear').addEventListener('click', clearDisplay)
+    window.addEventListener('keydown', populateDisplayFromKeyDown);
+    window.addEventListener('keydown', (event) => {
+        const value = document.querySelector(`.clear[data-key="${event.key}"]`);
+        if (value) clearDisplay();
+    });
 }
 
 function computeAnswer() {
@@ -55,11 +62,22 @@ function computeAnswer() {
 
 }
 
-function populateDisplay(event) {
-    let value = event.target.textContent;
-    if (DISPLAY_VALUE === INFINITY_ANSWER) {
-        return;
-    }
+function populateDisplayFromClick(event) {
+    const value = event.target.textContent;
+    populateDisplay(value);
+}
+
+function populateDisplayFromKeyDown(event) {
+    // console.log(event.key);
+    const value = document.querySelector(`.button[data-key="${event.key}"]`);
+    // console.log(value);
+    if (!value) return;
+    populateDisplay(value.textContent);
+}
+
+function populateDisplay(value) {
+    if (DISPLAY_VALUE === INFINITY_ANSWER) return;
+    if (DISPLAY_VALUE.toString().split("").length > 7) return;
     if (Object.keys(OPERATOR_BY_SYMBOL).includes(value)) {
         if (!(OPERATOR_SYMBOL === undefined)) {
             DISPLAY_VALUE = computeAnswer();
