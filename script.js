@@ -45,7 +45,7 @@ function processMouseClick() {
 
 function computeAnswer() {
     if (OPERATOR_SYMBOL === undefined) return DISPLAY_VALUE;
-    const secondNumber = DISPLAY_VALUE.split(OPERATOR_SYMBOL)[1];
+    const secondNumber = DISPLAY_VALUE.split(OPERATOR_SYMBOL).slice(-1)[0];
     if (secondNumber === "") return DISPLAY_VALUE;
     if (secondNumber === "0" && OPERATOR_SYMBOL === "/") {
         return "lmao";
