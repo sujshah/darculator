@@ -77,7 +77,7 @@ function populateDisplayFromKeyDown(event) {
 
 function populateDisplay(value) {
     if (DISPLAY_VALUE === INFINITY_ANSWER) return;
-    if (DISPLAY_VALUE.toString().split("").length > 7) return;
+    if (DISPLAY_VALUE.toString().split("").length > 8) return;
     if (Object.keys(OPERATOR_BY_SYMBOL).includes(value)) {
         if (!(OPERATOR_SYMBOL === undefined)) {
             DISPLAY_VALUE = computeAnswer();
