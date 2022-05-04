@@ -9,23 +9,31 @@
 <body>
     <div class="container">
         <div class="calculator">
-            <div class="display">Example input: 213</div>
-            <div class="clear">CLEAR</div>
+            <div class="display">0</div>
             <div class="buttons">
-                <div class="button">1</div>
-                <div class="button">2</div>
-                <div class="button">3</div>
-                <div class="button">4</div>
-                <div class="button">5</div>
-                <div class="button">6</div>
-                <div class="button">7</div>
-                <div class="button">8</div>
-                <div class="button">9</div>
-                <div class="button">+</div>
-                <div class="button">-</div>
-                <div class="button">x</div>
-                <div class="button">/</div>
-                <div class="button">=</div>
+                <div class="left-buttons">
+                    <div class="clear" data-key="Delete">AC</div>
+                    <div class="numbers">
+                        <div class="button number" data-key="1">1</div>
+                        <div class="button number" data-key="2">2</div>
+                        <div class="button number" data-key="3">3</div>
+                        <div class="button number" data-key="4">4</div>
+                        <div class="button number" data-key="5">5</div>
+                        <div class="button number" data-key="6">6</div>
+                        <div class="button number" data-key="7">7</div>
+                        <div class="button number" data-key="8">8</div>
+                        <div class="button number" data-key="9">9</div>
+                        <div class="button number zero" data-key="0">0</div>
+                        <div class="button number" data-key=".">.</div>
+                    </div>
+                </div>
+                <div class="operators">
+                    <div class="button operator" data-key="+">+</div>
+                    <div class="button operator" data-key="-">-</div>
+                    <div class="button operator" data-key="*">*</div>
+                    <div class="button operator" data-key="/">/</div>
+                    <div class="button operator" data-key="Enter">=</div>
+                </div>
             </div>
         </div>
     </div>
